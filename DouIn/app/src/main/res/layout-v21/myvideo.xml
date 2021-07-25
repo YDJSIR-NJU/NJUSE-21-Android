@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--上下滑动视频列表播放页面-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!--    <VideoView-->
+    <!--        android:id="@+id/vv"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"></VideoView>-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="56dp"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/recommend1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:clickable="true"
+                android:text="推荐"
+                android:textColor="#f2f2f2"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/play1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="看看"
+                android:textColor="#f2f2f2"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/my_video1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="我的"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

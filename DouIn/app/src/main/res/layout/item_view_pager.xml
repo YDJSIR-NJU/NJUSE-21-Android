@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--上下滑动翻页界面单个视频-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.douin.play.FullScreenVideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:focusable="false" />
+
+    <ImageView
+        android:id="@+id/img_thumb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:focusable="false"
+        android:scaleType="centerCrop"
+        android:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="180dp"
+        android:elevation="6sp"
+        android:indeterminateTint="#DCDCDC"
+        android:visibility="visible" />
+
+    <com.example.douin.play.RainView
+        android:id="@+id/rain_View"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@mipmap/header_icon_2"
+                app:civ_border_color="@android:color/darker_gray"
+                app:civ_border_width="2dp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/click_heart"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/default_star_num"
+            android:textColor="@android:color/white"
+            android:focusable="true"
+            app:drawableTopCompat="@mipmap/heart_icon" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="75dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/default_video_author"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/default_video_desc"
+            android:textColor="#f2f2f2"
+            android:textSize="15sp" />
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/img_play"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:alpha="0"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/play_arrow"
+        android:contentDescription="@string/playorstop" />
+</RelativeLayout>

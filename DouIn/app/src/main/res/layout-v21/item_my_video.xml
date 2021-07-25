@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--上下滑动翻页自行录制的视频项-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_h_v"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+
+    <com.example.douin.play.FullScreenVideoView
+        android:id="@+id/tv_hv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:focusable="false" />
+
+    <ImageView
+        android:id="@+id/img_play1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:alpha="0"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/play_arrow"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="25dp"
+        android:text="@string/created_date_self"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</RelativeLayout>
