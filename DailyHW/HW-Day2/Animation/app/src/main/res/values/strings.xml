@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">YDJSIRHere</string>
+    <string name="ViewPagerTitle">YDJSIR</string>
+    <string name="this_is_ydjsir">这里是YDJSIR啊</string>
+    <string name="make_new_friends">和YDJSIR交个朋友？</string>
+    <string name="contact_ydjsir">请联系YDJSIR!</string>
+    <string name="visit_ydjsir_com_cn">请访问ydjsir.com.cn</string>
+    <string name="defaulttextview">YDJSIR-friend</string>
+    <string-array name="friendsList">
+        <item>01_friend</item>
+        <item>02_friend</item>
+        <item>03_friend</item>
+        <item>04_friend</item>
+        <item>05_friend</item>
+        <item>06_friend</item>
+        <item>07_friend</item>
+        <item>08_friend</item>
+        <item>09_friend</item>
+        <item>11_friend</item>
+        <item>12_friend</item>
+        <item>13_friend</item>
+        <item>14_friend</item>
+        <item>15_friend</item>
+        <item>16_friend</item>
+        <item>17_friend</item>
+        <item>18_friend</item>
+        <item>19_friend</item>
+        <item>20_friend</item>
+        <item>21_friend</item>
+        <item>22_friend</item>
+        <item>23_friend</item>
+        <item>24_friend</item>
+        <item>25_friend</item>
+        <item>26_friend</item>
+        <item>01_friend</item>
+        <item>02_friend</item>
+        <item>03_friend</item>
+        <item>04_friend</item>
+        <item>05_friend</item>
+        <item>06_friend</item>
+        <item>07_friend</item>
+        <item>08_friend</item>
+        <item>09_friend</item>
+        <item>11_friend</item>
+        <item>12_friend</item>
+        <item>13_friend</item>
+        <item>14_friend</item>
+        <item>15_friend</item>
+        <item>16_friend</item>
+        <item>17_friend</item>
+        <item>18_friend</item>
+        <item>19_friend</item>
+        <item>20_friend</item>
+        <item>21_friend</item>
+        <item>22_friend</item>
+        <item>23_friend</item>
+        <item>24_friend</item>
+        <item>25_friend</item>
+        <item>26_friend</item>
+    </string-array>
+</resources>

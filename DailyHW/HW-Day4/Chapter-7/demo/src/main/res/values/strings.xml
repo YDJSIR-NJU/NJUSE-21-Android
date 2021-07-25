@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">demo</string>
+
+
+    <string name="print_absolute_path">Print absolute path</string>
+    <string name="request_storage_permission">Request Storage Permission</string>
+    <string name="write_to_file">Write to files</string>
+    <string name="write_to_file_hint">Display your content here</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+</resources>

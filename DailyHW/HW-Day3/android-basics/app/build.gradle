@@ -1,0 +1,144 @@
+import java.nio.file.Paths
+import java.text.SimpleDateFormat
+
+apply plugin: 'com.android.application'
+apply plugin: 'nju.plugin'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "android.basics"
+        minSdkVersion 17
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "commitHash", "\"${fetchCommitHash()}\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+String fetchCommitHash() {
+    return "git rev-parse --short HEAD".execute().text.trim()
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+// TODO 改名字
+afterEvaluate { // 在afterEvaluate中,gradle才完成这个task的创建，才能找到这个任务实例
+    def targetTask = project.tasks.findByName("assembleDebug")
+
+    targetTask.doLast { // 每个task都可以挂任意数量的doFirst/doLast
+        println("GRADLE IS SO POWERFUL.\n")
+    }
+    targetTask.outputs.upToDateWhen { // gradle task 有up-to-date机制
+        false
+    }
+//    def targetTask2 = project.tasks.findByName("NjuTask1")
+//    targetTask2.doLast { // 每个task都可以挂任意数量的doFirst/doLast
+//      println("GRADLE IS SO POWERFUL2.\n")
+//    }
+}
+
+task NjuTask1(type: DefaultTask) {  // 这个闭包是用于配置task的闭包，不是task action
+    println("This is NJU Task1 at configuration time.")
+}
+
+afterEvaluate { // 也可以在这里增加task，从而可以配置一些依赖关系
+    def targetTask = project.tasks.findByName("assembleDebug")
+    project.tasks.create("NjuTask2") {
+        println("Here is NjuTask2")
+        it.dependsOn targetTask
+    }
+    //project.tasks.create("NjuTask3")
+}
+
+task NjuTask3(type: NjuTaskType) {
+    println("This is NJU Task3" )
+}
+
+class NjuTaskType extends DefaultTask {
+    @TaskAction
+    public void foo() {
+        println("NJU Task type at executing time.")
+    }
+}
+
+project.afterEvaluate {
+    def tasks = new ArrayList<Task>()
+    tasks.add(project.tasks.findByName("mergeReleaseAssets"))
+    tasks.add(project.tasks.findByName("mergeDebugAssets"))
+    tasks.add(project.tasks.findByName("NjuTask3"))
+//    tasks.add(project.tasks.findByName("NjuTask3")) ???
+    tasks.each { curTask ->
+        curTask.doLast {
+            def midPath = curTask.name.contains("Release") ? "release" : "debug"
+            // find your assets and delete them
+            def targetDir = Paths.get(project.buildDir.absolutePath, "intermediates", "merged_assets", midPath, curTask.name, "out").toFile()
+            if (!targetDir.exists()) {
+                logKey("Fail to find target merged dir: ${targetDir.absolutePath}")
+                // 升级了agp到334之后，目录发生了变化
+                targetDir = Paths.get(project.buildDir.absolutePath, "intermediates", "merged_assets", midPath, "out").toFile()
+            }
+
+            def newFile = new File(targetDir, "daqi_haha.txt")
+            newFile.write("haha")
+        }
+    }
+}
+
+// homework: 修改生成的debug apk的名字为: nju_byte__${YYYY-MM-DD_HH-MM}.apk, e.g nju_byte__2021-07-12_08-35.apk
+project.afterEvaluate {
+    /*
+    要点：
+    a) 找到需要hook的gradle task，这里一般是assembleDebug任务
+    b) 跑一遍assembleDebug，在app/build目录下找到生成的apk路径
+    c) 构造需要生成的apk的名字，然后修改apk的名字
+     */
+    def targetTask = project.tasks.findByName("assembleDebug")
+
+    targetTask.doLast { // 每个task都可以挂任意数量的doFirst/doLast
+        println("GRADLE IS SO POWERFUL!\n")
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm");
+        String curDate = sdf.format(new Date())
+        String actualName = "nju_byte__" + curDate + ".apk"
+        println(actualName)
+        println("\nB E F O R E\n")
+        println("cmd.exe /c dir app\\build\\outputs\\apk\\debug".execute().text)
+        String ren = "cmd.exe /c ren app\\build\\outputs\\apk\\debug\\app-debug.apk \"" + actualName + "\""
+//        String ren = "cmd.exe /c ren app\\build\\outputs\\apk\\debug\\app-debug.apk ydj.apk"
+        println(ren)
+        println(ren.execute().text)
+        println("\nA F T E R\n")
+        println("cmd.exe /c dir app\\build\\outputs\\apk\\debug".execute().text)
+        println("DONE")
+    }
+    targetTask.outputs.upToDateWhen { // gradle task 有up-to-date机制
+        false
+    }
+
+
+}

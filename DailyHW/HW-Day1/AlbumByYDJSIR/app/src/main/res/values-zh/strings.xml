@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">你好安卓</string>
+    <string name="album_app_name">极简相册</string>
+
+    <string name="test_string">这是测试文本。</string>
+    <string name="test_long_string">这是测试文本。这是测试文本。这是测试文本。这是测试文本。这是测试文本。</string>
+    <string name="register_canceled">注册取消。</string>
+    <string name="greetings">欢迎！</string>
+    <string name="login_username">姓名</string>
+    <string name="login_username_hint">在这里输入你的姓名。</string>
+    <string name="login_userage">年龄</string>
+    <string name="login_userage_hint">在这里输入你的年龄。</string>
+    <string name="login_usergender">性别</string>
+    <string name="login_gender_male">男</string>
+    <string name="login_gender_female">女</string>
+    <string name="login_useraddress">地址</string>
+    <string name="login_useraddress_hint">在这里输入你的地址。</string>
+    <string name="login_email">邮箱</string>
+    <string name="login_email_hint">在这里输入邮箱地址。</string>
+    <string name="login_password">密码</string>
+    <string name="login_password_hint">在这里输入密码。</string>
+    <string name="login_sign_in">登录</string>
+    <string name="login_forgot_password">忘记密码？</string>
+<!--    <string name="login_sign_in_with_google">使用 Google 登录</string>-->
+    <string name="login_no_account">没有账号？</string>
+    <string name="login_sign_up">注册</string>
+    <string name="login_sign_in_susscess_tip">已登录</string>
+    <string name="login_sign_in_failure_tip">您输入的账号与密码不匹配！</string>
+    <string name="login_agree_licence"><u>注册表示同意用户条款</u></string>
+    <string name="album_prev">前一张</string>
+    <string name="album_next">下一张</string>
+    <string name="album_no_prev">已经是第一张了</string>
+    <string name="album_no_next">已经是最后一张了</string>
+    <string name="login_cancel">取消</string>
+    <string name="login_conform">确定</string>
+    <string name="signup_success">注册成功，请登录</string>
+    <string name="signup_fail_data_invalid">注册失败，数据不对</string>
+    <string name="signup_fail_not_agree_licence">注册需要同意用户条款</string>
+    <string name="LogOut">登出</string>
+
+    <string name="forget_pass_tip">忘记密码了？没关系，找回来！</string>
+    <string name="forget_pass_no_user">此用户未注册！</string>
+    <string name="forget_pass_name_not_match">用户名不匹配！</string>
+    <string name="forget_pass_result">你的密码是：</string>
+    <string name="title_activity_eulaactivity">最终用户协议与隐私政策</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="EULATitle">最终用户许可协议</string>
+    <string name="privacyAgreementTitle">隐私保护政策</string>
+    <string name="next">查看隐私保护政策</string>
+    <string name="previous">返回最终用户许可协议</string>
+    <string name="confirmReadEULA">我知道了，请继续</string>
+    <string name="EULAContent">最终用户软件许可协议（以下简称“本协议”）是您（个人、公司或其他任何实体）与YDJSIR就本软件（参见本协议中第一条第（一）项的定义）的使用所签订的协议。您需达到您所在地区的法定成年年龄，方可访问并签订本协议。若您未达法定成年年龄，则需要您的监护人同意或签订本协议。在使用本软件前，请仔细阅读本协议。您使用本软件将被视为您已同意接受本协议中所述的约束条件。如您不同意本协议，请勿使用本软件。商品退货政策遵照购买国家/地区的相关法律法规执行。受本协议约束的软件不包含第一条第（二）项中定义的开源软件组件。您可以随时访问YDJSIR的网站 （ ydjsir.com.cn ） 以查看本协议的副本，并可以保留一份本协议的副本以供日后参考。</string>
+    <string name="privacyAgreementContent">1、安全可靠：
+        我们竭尽全力通过合理有效的信息安全技术及管理流程，防止您的信息泄露、损毁、丢失。
+        2、自主选择：
+        我们为您提供便利的信息管理选项，以便您做出合适的选择，管理您的 个人信息 。
+        3、保护通信秘密：
+        我们严格遵照法律法规，保护您的通信秘密，为您提供安全的通信服务。
+        4、合理必要：
+        为了向您和其他用户提供更好的服务，我们仅收集必要的信息。
+        5、清晰透明：
+        我们努力使用简明易懂的表述，向您介绍隐私政策，以便您清晰地了解我们的信息处理方式。
+        6、将隐私保护融入产品设计：
+        我们在产品和服务研发、运营的各个环节，融入隐私保护的理念。
+    </string>
+</resources>
